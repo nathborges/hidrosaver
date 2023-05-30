@@ -1,27 +1,37 @@
 <template>
-    <div class="container"></div>
+  <div id="flex-container">
+    <InputMetrics class="inputComponent"/>
+    <Graphic class="graphComponent" />
+  </div>
 </template>
 
 <script>
+import InputMetrics from './subcomponents/InputMetrics.vue'
+import Graphic from './subcomponents/Graphic.vue'
 export default {
     name: 'HomePage',
+    components: {
+      InputMetrics,
+      Graphic,
+    },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-    margin: 40px 0 0;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
+  #flex-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    gap: 3vh;
+  }
+
+  .inputComponent {
+    flex: 2;
+  }
+
+  .graphComponent {
+    flex: 1;
+  }
 </style>

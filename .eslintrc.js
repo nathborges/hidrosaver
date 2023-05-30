@@ -12,7 +12,8 @@ module.exports = {
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'vue/valid-attribute-name': false,
+        'vue/valid-attribute-name': 'off',
+        'vue/multi-word-component-names': 0,
     },
     parserOptions: {
         parser: '@babel/eslint-parser',
