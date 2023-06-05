@@ -71,7 +71,6 @@ export default {
             location.reload()
         },
         openModal() {
-            console.log('aaa')
             this.showModal = true
         },
     },

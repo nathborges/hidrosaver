@@ -1,6 +1,6 @@
 <template>
     <div class="card-carousel-container">
-        <li v-for="(input, index) in inputs" :key="index" class="centralize">
+        <li v-for="(input, index) in returnFilteredInputs" :key="index" class="centralize">
             <Card
                 :title="input.day"
                 :metrics="input.metrics"
@@ -29,28 +29,6 @@ export default {
             inputs: [],
         }
     },
-    created() {
-        const metrics = localStorage.getItem('metrics')
-        const parsedMetrics = JSON.parse(metrics)
-
-        this.inputs = parsedMetrics
-    },
-    methods: {
-        filteredInputs(value) {
-            this.inputs = this.inputs.filter((eachInput) => {
-                return eachInput.includes(value)
-            })
-        },
-        returnRandomColor(index) {
-            if (!index) {
-                return this.colors[0]
-            }
-            const realIndex = index + 1
-            const numberOfColors = this.colors.length + 1
-            const item = realIndex % numberOfColors
-            return this.colors[item - 1]
-        },
-    },
     computed: {
         returnFilteredInputs() {
             if (this.valueSearched == '') {
@@ -59,6 +37,23 @@ export default {
             return this.inputs.filter((eachInput) => {
                 return eachInput.day.includes(this.valueSearched)
             })
+        },
+    },
+    created() {
+        const metrics = localStorage.getItem('metrics')
+        const parsedMetrics = JSON.parse(metrics)
+
+        this.inputs = parsedMetrics
+    },
+    methods: {
+        returnRandomColor(index) {
+            if (!index) {
+                return this.colors[0]
+            }
+            const realIndex = index + 1
+            const numberOfColors = this.colors.length + 1
+            const item = realIndex % numberOfColors
+            return this.colors[item - 1]
         },
     },
 }

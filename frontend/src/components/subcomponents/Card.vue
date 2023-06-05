@@ -100,14 +100,12 @@ export default {
                 return
             }
 
-            console.log(this.title)
             metrics = JSON.parse(metrics)
 
             let newMetrics = metrics.filter((eachMetric) => {
                return eachMetric.day !== this.title
             })
 
-            console.log(newMetrics)
 
             if (!newMetrics) {
                 localStorage.removeItem('metric')
@@ -127,6 +125,7 @@ export default {
     flex-direction: column;
     width: 250px;
     height: fit-content;
+    cursor: pointer;
 }
 .card-title {
     background-color: #a8bfe2;
