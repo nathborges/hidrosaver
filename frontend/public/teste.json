@@ -1,0 +1,34 @@
+[
+    {
+        "day": "05/06/23",
+        "metrics": {
+            "banho": { "quantity": 48, "liters": 336 },
+            "torneira": { "quantity": 220, "liters": 4400 },
+            "descarga": { "quantity": 0, "liters": 0 }
+        }
+    },
+    {
+        "day": "03/06/23",
+        "metrics": {
+            "banho": { "quantity": 100, "liters": 336 },
+            "torneira": { "quantity": 220, "liters": 4400 },
+            "descarga": { "quantity": 340, "liters": 100 }
+        }
+    },
+    {
+        "day": "02/06/23",
+        "metrics": {
+            "banho": { "quantity": 10, "liters": 10 },
+            "torneira": { "quantity": 200, "liters": 200 },
+            "descarga": { "quantity": 340, "liters": 400 }
+        }
+    },
+    {
+        "day": "01/06/23",
+        "metrics": {
+            "banho": { "quantity": 3, "liters": 3 },
+            "torneira": { "quantity": 123, "liters": 12 },
+            "descarga": { "quantity": 323, "liters": 32 }
+        }
+    }
+]

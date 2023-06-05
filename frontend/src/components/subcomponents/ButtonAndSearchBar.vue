@@ -1,18 +1,31 @@
 <template>
     <div id="button-search-container">
-        <a id="button">
+        <a id="button" @mousedown="openModal">
             <font-awesome-icon
                 icon="fa-solid fa-plus"
                 size="xl"
                 style="color: #ffff"
             />
         </a>
-        <input />
+        <input v-model="parameter" @keydown="searchForAValue"/>
     </div>
 </template>
 <script>
 export default {
     name: 'ButtonAndSearchBar',
+    data() {
+        return {
+            parameter: '',
+        }
+    },
+    methods: {
+        openModal() {
+            this.$emit('openModal')
+        },
+        searchForAValue() {
+            this.$emit('searchFor', this.parameter);
+        }
+    },
 }
 </script>
 <style scoped>

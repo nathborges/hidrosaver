@@ -1,0 +1,75 @@
+<template>
+    <div class="card-carousel-container">
+        <li v-for="(input, index) in inputs" :key="index" class="centralize">
+            <Card
+                :title="input.day"
+                :metrics="input.metrics"
+                :color="returnRandomColor(index)"
+            />
+        </li>
+    </div>
+</template>
+<script>
+import Card from './Card.vue'
+
+export default {
+    name: 'Carousel',
+    components: {
+        Card,
+    },
+    props: {
+        valueSearched: {
+            type: String,
+            required: false,
+        },
+    },
+    data() {
+        return {
+            colors: ['#A8BFE2', ' #A8DFE2', '#B7A8E2', '#FFC1CC'],
+            inputs: [],
+        }
+    },
+    created() {
+        const metrics = localStorage.getItem('metrics')
+        const parsedMetrics = JSON.parse(metrics)
+
+        this.inputs = parsedMetrics
+    },
+    methods: {
+        filteredInputs(value) {
+            this.inputs = this.inputs.filter((eachInput) => {
+                return eachInput.includes(value)
+            })
+        },
+        returnRandomColor(index) {
+            if (!index) {
+                return this.colors[0]
+            }
+            const realIndex = index + 1
+            const numberOfColors = this.colors.length + 1
+            const item = realIndex % numberOfColors
+            return this.colors[item - 1]
+        },
+    },
+    computed: {
+        returnFilteredInputs() {
+            if (this.valueSearched == '') {
+                return this.inputs
+            }
+            return this.inputs.filter((eachInput) => {
+                return eachInput.day.includes(this.valueSearched)
+            })
+        },
+    },
+}
+</script>
+<style scoped>
+.card-carousel-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    height: 100%;
+    width: 100%;
+    overflow-x: scroll;
+}
+</style>

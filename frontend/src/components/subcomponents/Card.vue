@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container">
+    <div class="card-container" @click="remove">
         <div class="card-title centralize" :style="{ backgroundColor: color }">
             <h2>{{ title }}</h2>
         </div>
@@ -14,12 +14,12 @@
                 </div>
                 <div class="text">
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.quantity }}</h2>
-                        <p>banhos</p>
+                        <h2>{{ returnMetrics.banho.quantity }}</h2>
+                        <p>minutos</p>
                     </div>
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.liters }}</h2>
-                        <p>l</p>
+                        <h2>{{ returnMetrics.banho.liters }}</h2>
+                        <p>litros</p>
                     </div>
                 </div>
             </div>
@@ -33,12 +33,14 @@
                 </div>
                 <div class="text">
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.quantity }}</h2>
-                        <p>banhos</p>
+                        <h2>{{ returnMetrics.descarga.quantity }}</h2>
+                        <p>descargas</p>
                     </div>
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.liters }}</h2>
-                        <p>l</p>
+                        <h2>
+                            {{ returnMetrics.descarga.liters }}
+                        </h2>
+                        <p>litros</p>
                     </div>
                 </div>
             </div>
@@ -52,12 +54,14 @@
                 </div>
                 <div class="text">
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.quantity }}</h2>
-                        <p>banhos</p>
+                        <h2>{{ returnMetrics.torneira.quantity }}</h2>
+                        <p>minutos</p>
                     </div>
                     <div class="info">
-                        <h2>{{ returnMetrics.shower.liters }}l</h2>
-                        <p>total</p>
+                        <h2>
+                            {{ returnMetrics.torneira.liters }}
+                        </h2>
+                        <p>litros</p>
                     </div>
                 </div>
             </div>
@@ -89,6 +93,30 @@ export default {
             return this.metrics
         },
     },
+    methods: {
+        remove() {
+            let metrics = localStorage.getItem('metrics')
+            if (!metrics || metrics.length == 0) {
+                return
+            }
+
+            console.log(this.title)
+            metrics = JSON.parse(metrics)
+
+            let newMetrics = metrics.filter((eachMetric) => {
+               return eachMetric.day !== this.title
+            })
+
+            console.log(newMetrics)
+
+            if (!newMetrics) {
+                localStorage.removeItem('metric')
+            }
+
+            localStorage.setItem('metrics', JSON.stringify(newMetrics))
+            location.reload()
+        },
+    },
 }
 </script>
 <style scoped>
@@ -98,7 +126,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 90%;
+    height: fit-content;
 }
 .card-title {
     background-color: #a8bfe2;
@@ -108,8 +136,8 @@ export default {
     text-align: center;
     margin: 0;
     flex: 1;
-    max-height: 25px;
-    min-height: 25px;
+    max-height: 30px;
+    min-height: 30px;
 }
 
 .card-title h2 {
@@ -120,8 +148,8 @@ export default {
     flex-direction: column;
     gap: 1vh;
     padding-left: 1vw;
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
     padding-right: 1vw;
     flex: 2;
 }
@@ -141,6 +169,7 @@ export default {
     gap: 10px;
     width: 100%;
     justify-content: center;
+    flex: 1.5;
 }
 
 .info p {
@@ -149,7 +178,7 @@ export default {
 }
 
 .info h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .info {
@@ -160,6 +189,8 @@ export default {
 
 .image {
     flex: 0.5;
+    display: flex;
+    justify-content: center;
 }
 
 .icon {
