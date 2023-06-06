@@ -104,7 +104,7 @@ export default {
     height: 10%;
 }
 
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 500px) {
     #flex-container {
         margin-left: 2vw;
         margin-right: 2vw;

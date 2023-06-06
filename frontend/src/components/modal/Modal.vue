@@ -249,7 +249,7 @@ export default {
 }
 
 /* min-width */
-@media screen and (min-width: 100px) {
+@media screen and (max-width: 500px) {
     #modal-content {
         min-width: min-content;
     }

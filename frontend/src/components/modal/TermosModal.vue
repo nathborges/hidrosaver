@@ -21,8 +21,9 @@
                         Todo o conteúdo presente neste site, incluindo, mas não
                         se limitando a textos, gráficos, logotipos, ícones,
                         imagens, áudio e vídeo clipes, downloads digitais e
-                        compilações de dados, é de propriedade do site Hidrosaver e
-                        está protegido por leis de direitos autorais.<br />
+                        compilações de dados, é de propriedade do site
+                        Hidrosaver e está protegido por leis de direitos
+                        autorais.<br />
                         Você não tem permissão para reproduzir, distribuir,
                         exibir publicamente, modificar, transmitir ou usar o
                         conteúdo deste site sem a permissão prévia por escrito
@@ -204,13 +205,23 @@ export default {
     flex-direction: column;
 }
 /* min-width */
-@media screen and (min-width: 100px) {
+@media screen and (max-width: 500px) {
+
     #modal-content {
-        min-width: min-content;
+        width: 90%;
     }
 
+    #options{
+        padding: 0;
+    }
     .options-row {
         flex-direction: column;
+    }
+
+    .termos-de-uso {
+        min-width: min-content;
+        overflow: scroll;
+        height: 60vh;
     }
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
     <div class="card-carousel-container">
-        <li v-for="(input, index) in returnFilteredInputs" :key="index" class="centralize">
+        <li
+            v-for="(input, index) in returnFilteredInputs"
+            :key="index"
+            class="centralize"
+        >
             <Card
                 :title="input.day"
                 :metrics="input.metrics"
@@ -68,9 +72,12 @@ export default {
     overflow-x: scroll;
 }
 
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 500px) {
     .card-carousel-container {
-        justify-content: center;
+        padding-left: 2vw;
+        padding-bottom: 2vh;
+        padding-top: 2vh;
+        padding-right: 2vw;
     }
-};
+}
 </style>
