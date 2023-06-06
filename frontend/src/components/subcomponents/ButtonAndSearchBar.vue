@@ -7,7 +7,7 @@
                 style="color: #ffff"
             />
         </a>
-        <input v-model="parameter" @keydown="searchForAValue"/>
+        <input v-model="parameter" @keyup="searchForAValue"/>
     </div>
 </template>
 <script>

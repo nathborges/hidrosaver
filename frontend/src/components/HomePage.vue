@@ -1,6 +1,9 @@
 <template>
     <div id="flex-container">
-        <img class="logo" src=".././assets/logo.svg" />
+        <div id="flex-img">
+            <img class="logo" src=".././assets/logo.svg" />
+            <img class="kraft-logo" src=".././assets/kraft.png" />
+        </div>
         <InputMetrics class="inputComponent" @openModal="emitOpenModal" />
         <Graphic id="graphicComponent"/>
     </div>
@@ -32,6 +35,24 @@ export default {
 .logo {
     height: 14vh;
 }
+
+#flex-img {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.logo {
+    flex: 1;
+    padding-left: 11.5%;
+}
+
+.kraft-logo {
+    flex: 0.1;
+    height: 15px;
+    display: inline-block;
+}
+
 #flex-container {
     display: flex;
     flex-direction: column;

@@ -97,6 +97,7 @@ export default {
             });
 
             this.averageLiters = this.allLiters / this.days.length
+            this.averageLiters = this.averageLiters.toFixed(2)
         },
     },
 }

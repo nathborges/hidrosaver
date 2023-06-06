@@ -21,10 +21,10 @@ export default {
             showModal: false,
         }
     },
-    mounted() {
+    created() {
         const dummyData = `[
     {
-        "day": "05/06/23",
+        "day": "04/06/23",
         "metrics": {
             "banho": { "quantity": 48, "liters": 336 },
             "torneira": { "quantity": 220, "liters": 4400 },
@@ -38,31 +38,20 @@ export default {
             "torneira": { "quantity": 220, "liters": 4400 },
             "descarga": { "quantity": 340, "liters": 100 }
         }
-    },
-    {
-        "day": "02/06/23",
-        "metrics": {
-            "banho": { "quantity": 10, "liters": 10 },
-            "torneira": { "quantity": 200, "liters": 200 },
-            "descarga": { "quantity": 340, "liters": 400 }
-        }
-    },
-    {
-        "day": "01/06/23",
-        "metrics": {
-            "banho": { "quantity": 3, "liters": 3 },
-            "torneira": { "quantity": 123, "liters": 12 },
-            "descarga": { "quantity": 323, "liters": 32 }
-        }
     }
 ]`
         const metricas = localStorage.getItem('metrics')
+        const metricsArray = JSON.parse(metricas)
 
-        if (metricas) {
+        if (metricsArray) {
+            if (metricsArray.length !== 0) {
+                return
+            }
+
             return
         }
 
-        const dummyDataString = JSON.stringify(dummyData)
+        const dummyDataString = JSON.parse(JSON.stringify(dummyData))
         localStorage.setItem('metrics', dummyDataString)
     },
     methods: {
@@ -89,6 +78,7 @@ export default {
 }
 
 body {
+    background-color: rgba(123, 197, 251, 0.74);
     background: no-repeat center
         linear-gradient(
             180.06deg,

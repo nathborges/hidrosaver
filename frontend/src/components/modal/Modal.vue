@@ -128,6 +128,7 @@ export default {
 
             if (!metrics) {
                 metrics = []
+                newItem.metrics[this.selectedAction.code].liters = this.times * targetLiter
                 metrics.unshift(newItem)
                 localStorage.setItem('metrics', JSON.stringify(metrics))
                 return
@@ -139,6 +140,7 @@ export default {
             })
 
             if (todayMetric.length == 0) {
+                newItem.metrics[this.selectedAction.code].liters = this.times * targetLiter
                 metrics.unshift(newItem)
             } else {
                 const targetMetric = todayMetric[0]
@@ -153,7 +155,7 @@ export default {
                     targetLiter
 
                 metrics = metrics.filter((eachMetric) => {
-                    eachMetric.day !== targetMetric.day
+                    return eachMetric.day !== targetMetric.day
                 })
 
                 metrics.unshift(targetMetric)
