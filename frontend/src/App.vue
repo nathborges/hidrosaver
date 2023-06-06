@@ -30,25 +30,25 @@ export default {
     {
         "day": "04/06/23",
         "metrics": {
-            "banho": { "quantity": 10, "liters": 50 },
-            "torneira": { "quantity": 30, "liters":70 },
+            "banho": { "quantity": 10, "liters": 70 },
+            "torneira": { "quantity": 30, "liters":600 },
             "descarga": { "quantity": 0, "liters": 0 }
         }
     },
     {
         "day": "03/06/23",
         "metrics": {
-            "banho": { "quantity": 100, "liters": 300 },
-            "torneira": { "quantity": 10, "liters": 40 },
-            "descarga": { "quantity": 20, "liters": 30 }
+            "banho": { "quantity": 100, "liters": 700 },
+            "torneira": { "quantity": 10, "liters": 200 },
+            "descarga": { "quantity": 20, "liters": 240 }
         }
     },
         {
         "day": "02/06/23",
         "metrics": {
-            "banho": { "quantity": 50, "liters": 150 },
-            "torneira": { "quantity": 10, "liters": 40 },
-            "descarga": { "quantity": 20, "liters": 30 }
+            "banho": { "quantity": 50, "liters": 350 },
+            "torneira": { "quantity": 10, "liters": 200 },
+            "descarga": { "quantity": 20, "liters": 240 }
         }
     }
 ]`

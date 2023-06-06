@@ -95,7 +95,7 @@ export default {
 </script>
 <style scoped>
 .text-metrics {
-    color: black;
+    color: #4a4a4a;
 }
 
 .text-metrics-item {
