@@ -128,7 +128,8 @@ export default {
 
             if (!metrics) {
                 metrics = []
-                newItem.metrics[this.selectedAction.code].liters = this.times * targetLiter
+                newItem.metrics[this.selectedAction.code].liters =
+                    this.times * targetLiter
                 metrics.unshift(newItem)
                 localStorage.setItem('metrics', JSON.stringify(metrics))
                 return
@@ -140,7 +141,8 @@ export default {
             })
 
             if (todayMetric.length == 0) {
-                newItem.metrics[this.selectedAction.code].liters = this.times * targetLiter
+                newItem.metrics[this.selectedAction.code].liters =
+                    this.times * targetLiter
                 metrics.unshift(newItem)
             } else {
                 const targetMetric = todayMetric[0]
@@ -190,7 +192,7 @@ export default {
     align-items: center;
     padding: 1.5rem;
     width: 50%;
-    height: 40%;
+    height: min-content;
     border-radius: 30px;
     background-color: white;
     box-shadow: 4px 4px 4px rgba(79, 79, 79, 0.25);
@@ -244,5 +246,16 @@ export default {
     align-self: center;
     font-size: 1rem;
     color: #6c757d;
+}
+
+/* min-width */
+@media screen and (min-width: 100px) {
+    #modal-content {
+        min-width: min-content;
+    }
+
+    .options-row {
+        flex-direction: column;
+    }
 }
 </style>

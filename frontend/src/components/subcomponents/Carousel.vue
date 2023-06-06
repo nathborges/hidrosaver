@@ -67,4 +67,10 @@ export default {
     width: 100%;
     overflow-x: scroll;
 }
+
+@media screen and (max-width: 574px) {
+    .card-carousel-container {
+        justify-content: center;
+    }
+};
 </style>

@@ -2,11 +2,13 @@
 <template>
     <div>
         <Modal :show-modal="showModal" @onClose="onClose" />
-        <HomePage @openModal="openModal" />
+        <TermosModal :show-modal="showModalTermos" @onClose="onClose" />
+        <HomePage @openModal="openModal" @openModalTermos="openModalTermos" />
     </div>
 </template>
 
 <script>
+import TermosModal from './components/modal/TermosModal'
 import Modal from './components/modal/Modal'
 import HomePage from './components/HomePage'
 
@@ -14,11 +16,13 @@ export default {
     name: 'App',
     components: {
         Modal,
+        TermosModal,
         HomePage,
     },
     data() {
         return {
             showModal: false,
+            showModalTermos: false,
         }
     },
     created() {
@@ -70,6 +74,9 @@ export default {
         openModal() {
             this.showModal = true
         },
+        openModalTermos() {
+            this.showModalTermos= true
+        },
     },
 }
 </script>
@@ -120,9 +127,5 @@ h2 {
 
 p {
     margin: 0;
-}
-
-:root {
-    --scrollbar-color: rgb(255, 0, 0); /* red */
 }
 </style>

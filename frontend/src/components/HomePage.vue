@@ -6,6 +6,9 @@
         </div>
         <InputMetrics class="inputComponent" @openModal="emitOpenModal" />
         <Graphic id="graphicComponent"/>
+        <div class="flex-horizontal">
+            <p @click="emitTermosModal" class="termos-de-uso">Clique pra acessar termos de uso</p>
+        </div>
     </div>
 </template>
 
@@ -26,6 +29,9 @@ export default {
     methods: {
         emitOpenModal() {
             this.$emit('openModal')
+        },
+        emitTermosModal() {
+            this.$emit('openModalTermos')
         },
     },
 }
@@ -79,5 +85,33 @@ export default {
     flex-direction: column;
     padding: 30px;
     gap: 3vh;
+}
+
+.flex-horizontal {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.termos-de-uso {
+    color: grey;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logo-rodape {
+    height: 10%;
+}
+
+@media screen and (max-width: 574px) {
+    #flex-container {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .logo[data-v-df02a584] {
+    padding-left: 30%;
+    }
 }
 </style>
