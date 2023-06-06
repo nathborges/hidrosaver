@@ -32,7 +32,8 @@ export default {
         "metrics": {
             "banho": { "quantity": 10, "liters": 70 },
             "torneira": { "quantity": 30, "liters":600 },
-            "descarga": { "quantity": 0, "liters": 0 }
+            "descarga": { "quantity": 0, "liters": 0 },
+            "garrafa": { "quantity": 2, "liters": 1 }
         }
     },
     {
@@ -40,7 +41,8 @@ export default {
         "metrics": {
             "banho": { "quantity": 100, "liters": 700 },
             "torneira": { "quantity": 10, "liters": 200 },
-            "descarga": { "quantity": 20, "liters": 240 }
+            "descarga": { "quantity": 20, "liters": 240 },
+            "garrafa": { "quantity": 4, "liters": 2 }
         }
     },
         {
@@ -48,7 +50,8 @@ export default {
         "metrics": {
             "banho": { "quantity": 50, "liters": 350 },
             "torneira": { "quantity": 10, "liters": 200 },
-            "descarga": { "quantity": 20, "liters": 240 }
+            "descarga": { "quantity": 20, "liters": 240 },
+            "garrafa": { "quantity": 2, "liters": 1 }
         }
     }
 ]`

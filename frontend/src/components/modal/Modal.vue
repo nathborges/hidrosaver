@@ -31,13 +31,19 @@
                             "
                             class="minutos"
                         >
-                            minutos
+                            minuto(s)
                         </p>
                         <p
                             v-show="selectedAction.code == 'descarga'"
                             class="minutos"
                         >
-                            vezes
+                            vez(es)
+                        </p>
+                        <p
+                            v-show="selectedAction.code == 'garrafa'"
+                            class="minutos"
+                        >
+                            unidade(s) - 500ml
                         </p>
                     </div>
                 </div>
@@ -73,6 +79,7 @@ export default {
                 { name: 'Banho', code: 'banho' },
                 { name: 'Torneira', code: 'torneira' },
                 { name: 'Descarga', code: 'descarga' },
+                { name: 'Garrafa', code: 'garrafa' },
             ],
             selectedAction: { name: 'Banho', code: 'banho' },
             times: 0,
@@ -101,6 +108,7 @@ export default {
                 banho: 7,
                 torneira: 20,
                 descarga: 12,
+                garrafa: 0.5,
             }
 
             const targetLiter = literPorQuantity[this.selectedAction.code]
@@ -117,6 +125,10 @@ export default {
                         liters: 0,
                     },
                     descarga: {
+                        quantity: 0,
+                        liters: 0,
+                    },
+                    garrafa: {
                         quantity: 0,
                         liters: 0,
                     },

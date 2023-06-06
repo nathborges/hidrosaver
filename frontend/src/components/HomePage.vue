@@ -7,7 +7,7 @@
         <InputMetrics class="inputComponent" @openModal="emitOpenModal" />
         <Graphic id="graphicComponent"/>
         <div class="flex-horizontal">
-            <p @click="emitTermosModal" class="termos-de-uso">Clique pra acessar termos de uso</p>
+            <p @click="emitTermosModal" class="termos-de-uso"><u>Termos de uso e condições</u></p>
         </div>
     </div>
 </template>

@@ -5,9 +5,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import { faPlus, faShower, faToilet, faSink } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faShower, faToilet, faSink, faBottleWater } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlus, faShower, faToilet, faSink)
+library.add(faPlus, faShower, faToilet, faSink, faBottleWater)
 
 import PrimeVue from 'primevue/config';
 //theme

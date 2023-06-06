@@ -65,6 +65,27 @@
                     </div>
                 </div>
             </div>
+            <div id="copo" class="item">
+                <div class="image">
+                    <font-awesome-icon
+                        class="icon"
+                        icon="fa-solid fa-bottle-water"
+                        size="2xl"
+                    />
+                </div>
+                <div class="text">
+                    <div class="info">
+                        <h2>{{ returnMetrics.garrafa.quantity }}</h2>
+                        <p>garrafas</p>
+                    </div>
+                    <div class="info">
+                        <h2>
+                            {{ returnMetrics.garrafa.liters }}
+                        </h2>
+                        <p>litros</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div :class="mousePassando ? 'display' : 'displayNone'" class="warning">
             <p>Clique para remover</p>
@@ -175,8 +196,8 @@ export default {
     display: flex;
     gap: 10px;
     width: 100%;
-    justify-content: center;
     flex: 1.5;
+    justify-content: flex-start;
 }
 
 .info p {
