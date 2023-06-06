@@ -31,7 +31,6 @@ export default {
     },
     computed: {
         returnFilteredInputs() {
-            console.log(this.valueSearched)
             if (this.valueSearched == '' || this.inputs.length == 0) {
                 return this.inputs
             }
