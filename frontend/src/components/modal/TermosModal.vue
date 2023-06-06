@@ -1,40 +1,36 @@
 <template>
-    <div
-        v-show="showModal"
-        id="modal-container"
-        class="modal-container"
-    >
+    <div v-show="showModal" id="modal-container" class="modal-container">
         <div id="modal-content">
             <div id="options">
                 <div class="options-row">
                     <p>Termos de Uso</p>
                 </div>
                 <div class="termos-de-uso">
-                    <h3>1. Uso do Site</h3>
-                    <p>
+                    <h2 class="bold">1. Uso do Site</h2>
+                    <h2>
                         Ao utilizar este site, você concorda em utilizá-lo
                         apenas para fins legais e de acordo com todas as leis e
                         regulamentações aplicáveis.<br />
                         Você é responsável por garantir que todas as informações
                         fornecidas por você sejam precisas, atualizadas e
                         completas.
-                    </p>
+                    </h2>
 
-                    <h3>2. Propriedade Intelectual</h3>
-                    <p>
+                    <h2 class="bold">2. Propriedade Intelectual</h2>
+                    <h2>
                         Todo o conteúdo presente neste site, incluindo, mas não
                         se limitando a textos, gráficos, logotipos, ícones,
                         imagens, áudio e vídeo clipes, downloads digitais e
-                        compilações de dados, é de propriedade de Hidrosaver
-                        e está protegido por leis de direitos autorais.<br />
+                        compilações de dados, é de propriedade do site Hidrosaver e
+                        está protegido por leis de direitos autorais.<br />
                         Você não tem permissão para reproduzir, distribuir,
                         exibir publicamente, modificar, transmitir ou usar o
                         conteúdo deste site sem a permissão prévia por escrito
                         de Hidrosaver.
-                    </p>
+                    </h2>
 
-                    <h3>3. Limitação de Responsabilidade</h3>
-                    <p>
+                    <h2 class="bold">3. Limitação de Responsabilidade</h2>
+                    <h2>
                         O uso deste site é de sua inteira responsabilidade. O
                         site é fornecido "como está", sem garantias de qualquer
                         tipo, sejam expressas ou implícitas.<br />
@@ -42,31 +38,31 @@
                         diretos, indiretos, incidentais, consequenciais ou
                         punitivos decorrentes do uso ou incapacidade de uso
                         deste site.
-                    </p>
+                    </h2>
 
-                    <h3>4. Links para Sites de Terceiros</h3>
-                    <p>
+                    <h2 class="bold">4. Links para Sites de Terceiros</h2>
+                    <h2>
                         Este site pode conter links para sites de terceiros que
                         não são controlados ou mantidos por Hidrosaver.<br />
-                        Hidrosaver não se responsabiliza pelo conteúdo
-                        desses sites de terceiros ou por quaisquer danos ou
-                        perdas decorrentes do uso desses sites.
-                    </p>
+                        Hidrosaver não se responsabiliza pelo conteúdo desses
+                        sites de terceiros ou por quaisquer danos ou perdas
+                        decorrentes do uso desses sites.
+                    </h2>
 
-                    <h3>5. Alterações nos Termos de Uso</h3>
-                    <p>
-                        Hidrosaver reserva-se o direito de alterar estes
-                        Termos de Uso a qualquer momento, mediante notificação
-                        prévia ou publicação das alterações no site.<br />
+                    <h2 class="bold">5. Alterações nos Termos de Uso</h2>
+                    <h2>
+                        Hidrosaver reserva-se o direito de alterar estes Termos
+                        de Uso a qualquer momento, mediante notificação prévia
+                        ou publicação das alterações no site.<br />
                         É responsabilidade do usuário revisar regularmente estes
                         Termos de Uso para estar ciente de quaisquer alterações.
-                    </p>
+                    </h2>
 
-                    <h3>6. Disposições Gerais</h3>
-                    <p>
+                    <h2 class="bold">6. Disposições Gerais</h2>
+                    <h2>
                         Estes Termos de Uso serão regidos e interpretados de
                         acordo com as leis aplicáveis.
-                    </p>
+                    </h2>
                 </div>
             </div>
             <div id="actions">
@@ -116,6 +112,9 @@ export default {
 }
 </script>
 <style scoped>
+.bold {
+    font-family: 'inter-bold';
+}
 .modal-container {
     position: fixed;
     top: 0;
@@ -137,7 +136,7 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    width: 40%;
+    width: 60%;
     height: min-content;
     border-radius: 30px;
     background-color: white;
@@ -180,9 +179,9 @@ export default {
     flex: 2;
     align-content: center;
     justify-content: space-around;
-    gap: 1vh;
-    padding-right: 5vw;
-    padding-left: 5vw;
+    gap: 3vh;
+    padding-right: 4vw;
+    padding-left: 4vw;
 }
 
 .options-row {
@@ -204,13 +203,6 @@ export default {
     display: flex;
     flex-direction: column;
 }
-
-h3 {
-    margin: 0;
-    margin-top: 6px;
-    font-size: 13px;
-}
-
 /* min-width */
 @media screen and (min-width: 100px) {
     #modal-content {
