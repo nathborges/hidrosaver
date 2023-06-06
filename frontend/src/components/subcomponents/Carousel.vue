@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return {
-            colors: ['#A8BFE2', ' #A8DFE2', '#B7A8E2', '#FFC1CC'],
+            colors: ['#A8BFE2', ' #84c2c0', '#B7A8E2', '#FFC1CC'],
             inputs: [],
         }
     },

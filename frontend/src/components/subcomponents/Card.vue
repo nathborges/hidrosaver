@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container" @click="remove">
+    <div @mouseover="mousePassando = true" @mouseleave="mousePassando = false" class="card-container" @click="remove">
         <div class="card-title centralize" :style="{ backgroundColor: color }">
             <h2>{{ title }}</h2>
         </div>
@@ -66,6 +66,9 @@
                 </div>
             </div>
         </div>
+        <div :class="mousePassando ? 'display' : 'displayNone'" class="warning">
+            <p>Clique para remover</p>
+        </div>
     </div>
 </template>
 <script>
@@ -85,13 +88,18 @@ export default {
             required: true,
         },
     },
+    data() {
+        return {
+            mousePassando: false,
+        }
+    },
     computed: {
         returnMetrics() {
             if (!this.metrics) {
                 return ''
             }
             return this.metrics
-        },
+        }
     },
     methods: {
         remove() {
@@ -103,9 +111,8 @@ export default {
             metrics = JSON.parse(metrics)
 
             let newMetrics = metrics.filter((eachMetric) => {
-               return eachMetric.day !== this.title
+                return eachMetric.day !== this.title
             })
-
 
             if (!newMetrics) {
                 localStorage.removeItem('metric')
@@ -137,6 +144,7 @@ export default {
     flex: 1;
     max-height: 30px;
     min-height: 30px;
+    font-family: 'inter-bold';
 }
 
 .card-title h2 {
@@ -184,6 +192,7 @@ export default {
     display: flex;
     text-align: center;
     align-items: flex-end;
+    gap: 0.2vw;
 }
 
 .image {
@@ -194,5 +203,19 @@ export default {
 
 .icon {
     height: 90%;
+}
+
+.warning {
+    color: grey;
+    text-align: center;
+    padding-bottom: 0.5vh;
+}
+
+.displayNone {
+    visibility: hidden;
+}
+
+.display {
+    visibility: visible;
 }
 </style>

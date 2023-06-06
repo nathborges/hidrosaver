@@ -29,15 +29,6 @@ export default {
     mounted() {
         this.loadItems()
         const ctx = document.getElementById('myChart')
-
-        for (let i = this.days.length; i < 15; i++) {
-            this.days.push(null)
-        }
-
-        for (let i = this.days.length; i < 15; i++) {
-            this.liters.push(null)
-        }
-
         new Chart(ctx, {
             type: 'bar',
             data: {
