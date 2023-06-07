@@ -14,7 +14,7 @@ The [Hidrosaver](https://hidrosaver.vercel.app/) web app is a water tracker. Hid
 
 ## Live site
 
-[https://hidrosaver-nathborges.vercel.app/](https://hidrosaver.vercel.app/)
+[https://hidrosaver.vercel.app/](https://hidrosaver.vercel.app/)
 
 ## What a user can do
 
