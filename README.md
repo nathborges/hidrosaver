@@ -2,7 +2,7 @@
 
 ## About
 
-The [Hidrosaver](https://hidrosaver-nathborges.vercel.app/) web app is a water tracker. Hidrosaver's purpose is to help people to organize, track and measure their current water consumption.
+The [Hidrosaver](https://hidrosaver.vercel.app/) web app is a water tracker. Hidrosaver's purpose is to help people to organize, track and measure their current water consumption.
 
 ## Authors
 
@@ -14,7 +14,7 @@ The [Hidrosaver](https://hidrosaver-nathborges.vercel.app/) web app is a water t
 
 ## Live site
 
-https://hidrosaver-nathborges.vercel.app/
+[https://hidrosaver-nathborges.vercel.app/](https://hidrosaver.vercel.app/)
 
 ## What a user can do
 
