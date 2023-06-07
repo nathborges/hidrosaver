@@ -2,7 +2,7 @@
 
 ## About
 
-The Hidrosaver web app is a water tracker. Hidrosaver's purpose is to help people to organize, track and measure their current water consumption.
+The [Hidrosaver](https://hidrosaver-nathborges.vercel.app/) web app is a water tracker. Hidrosaver's purpose is to help people to organize, track and measure their current water consumption.
 
 ## Authors
 
@@ -11,6 +11,10 @@ The Hidrosaver web app is a water tracker. Hidrosaver's purpose is to help peopl
 | RM86786 | Arthur Sales Guilherme    |
 | RM89336 | Derek Seiji Lima Sadakane |
 | RM88426 | Nathália Ferreira Borges |
+
+## Live site
+
+https://hidrosaver-nathborges.vercel.app/
 
 ## What a user can do
 
